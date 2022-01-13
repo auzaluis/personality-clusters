@@ -13,5 +13,3 @@ This development contains the following algorithms:
 * PCA for grouping quotes related to personality
 * FACTOR ANALYSIS for looking a grouping recommendation
 * CLUSTER ANALYSIS
-
-NOTE: This development is optimized for 1920:1080 screen, for now...
