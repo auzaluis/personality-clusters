@@ -32,21 +32,21 @@ DF <- DF %>% drop_na() %>% filter(between(x = `Type your age`, 15, 25))
 # Statements
 
 statements <- colnames(x = DF %>%
-                           select(starts_with(match = "According to your way of being")))
+                         select(starts_with(match = "According to you")))
 
 
 
 statements <- as.data.frame(x = statements) %>%
-    
-    separate(col = statements,
-             into = c("[", "statements"),
-             sep = "\\[") %>%
-    
-    separate(col = 2,
-             into = c("statements", "]"),
-             sep = "\\]")  %>%
-    
-    select(statements)
+  
+  separate(col = statements,
+           into = c("[", "statements"),
+           sep = "\\[") %>%
+  
+  separate(col = 2,
+           into = c("statements", "]"),
+           sep = "\\]")  %>%
+  
+  select(statements)
 
 
 
@@ -63,29 +63,29 @@ colnames(DF)[6:29] <- statements
 
 
 for(statement in statements) { 
-    
-    DF[, statement] <- ifelse(test = DF[, statement] == "Strongly agree",
-                              yes = 5,
-                              ifelse(test = DF[, statement] == "Agree",
-                                     yes = 4,
-                                     ifelse(test = DF[, statement] == "Neither agree nor disagree",
-                                            yes = 3,
-                                            ifelse(test = DF[, statement] == "Disagree",
-                                                   yes = 2,
-                                                   ifelse(test = DF[, statement] == "Strongly disagree",
-                                                          yes = 1,
-                                                          no = 0)))))
-    
+  
+  DF[, statement] <- ifelse(test = DF[, statement] == "Strongly agree",
+                            yes = 5,
+                            ifelse(test = DF[, statement] == "Agree",
+                                   yes = 4,
+                                   ifelse(test = DF[, statement] == "Neither agree nor disagree",
+                                          yes = 3,
+                                          ifelse(test = DF[, statement] == "Disagree",
+                                                 yes = 2,
+                                                 ifelse(test = DF[, statement] == "Strongly disagree",
+                                                        yes = 1,
+                                                        no = 0)))))
+  
 }
 
 
 
 DF$`When I am 30 years old I would like to...` <- ifelse(
-    
-    test = DF$`When I am 30 years old I would like to...` == "Have a family, because they would give me extra motivation to focus on my personal goals",
-    yes = 1,
-    no = 0
-    
+  
+  test = DF$`When I am 30 years old I would like to...` == "Have a family, because they would give me extra motivation to focus on my personal goals",
+  yes = 1,
+  no = 0
+  
 )
 
 
@@ -102,14 +102,14 @@ statements <- c(statements,
 # Time in apps
 
 apps <- colnames(x = DF %>%
-                     select(starts_with(match = "How much time")))
+                   select(starts_with(match = "How much time")))
 
 
 
 for(app in apps) { 
-    
-    DF[, app] <- as.numeric(x = unlist(x = DF[, app])) / 60^2
-    
+  
+  DF[, app] <- as.numeric(x = unlist(x = DF[, app])) / 60^2
+  
 }
 
 
