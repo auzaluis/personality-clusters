@@ -1,5 +1,5 @@
 # personality-clusters
-This is a webapp was developed with Shiny RStudio. It tries to group a sample of college students based on personality traits.
+This webapp was developed with Shiny RStudio. It tries to group a sample of college students based on personality traits.
 
 You can see the results here:
 * Spanish - 1080 resolution: https://acortar.link/JATXOf
