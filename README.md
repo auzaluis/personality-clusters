@@ -3,7 +3,7 @@ This webapp was developed with Shiny RStudio. It tries to group a sample of coll
 
 You can see the results here:
 * Spanish - 1080 resolution: https://acortar.link/JATXOf
-* Spanish - 720 resolution: https://acortar.link/TNErx3
+* Spanish - 720 resolution: https://acortar.link/TNErx3 (not working)
 * English - 720 resolution: https://acortar.link/UTbtig
 
 Database was collected by Google Form survey (and still available): https://forms.gle/o7dWU3W27P6cmxBm8
